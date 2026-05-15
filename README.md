@@ -1,3 +1,5 @@
+
+
 ## **1\. Project Overview**
 
 This project demonstrates how to operationalize a Machine Learning–powered Flask web application using:
@@ -5,15 +7,15 @@ This project demonstrates how to operationalize a Machine Learning–powered Fla
 * **GitHub Actions** for Continuous Integration (CI)  
 * **Azure App Service** for cloud hosting  
 * **Azure CLI** for manual deployment  
-* **Shell scripts** for testing the prediction endpoint  
-* **Docker/Kubernetes (optional)** for containerization
+* **Shell scripts** for testing the prediction endpoint
 
 The application exposes a `/predict` endpoint that returns housing price predictions using a pretrained ML model.
+
+---
 
 ## **2\. Repository Structure**
 
 ```
-.
 ├── app.py                     # Flask application
 ├── requirements.txt           # Python dependencies
 ├── Makefile                   # Install, lint, test automation
@@ -21,10 +23,12 @@ The application exposes a `/predict` endpoint that returns housing price predict
 ├── make_prediction.sh         # Local prediction script
 ├── test_hello.py              # Sample CI test
 ├── hello.py                   # Sample Python module
-├── Dockerfile                 # Optional containerization
 ├── Housing_price_model/       # ML model artifacts
+├── Project-Plan.xlsx          # Original + Final project plan spreadsheet
 └── .github/workflows/         # GitHub Actions CI pipeline
 ```
+
+---
 
 ## **3\. Getting Started**
 
@@ -41,7 +45,7 @@ source ~/.myrepo/bin/activate
 make install
 ```
 
-### **3.3 Run Lint \+ Tests**
+### **3.3 Run Lint and Tests**
 
 ```
 make lint
@@ -53,6 +57,8 @@ Or run everything:
 ```
 make all
 ```
+
+---
 
 ## **4\. Running the Application Locally**
 
@@ -97,7 +103,7 @@ This command:
 * Configures logging  
 * Outputs the live URL
 
-Your deployed app:
+deployed app:
 
 ```
 https://udacity-webapp-shivali.azurewebsites.net
@@ -105,13 +111,15 @@ https://udacity-webapp-shivali.azurewebsites.net
 
 ## **6\. GitHub Actions CI Pipeline**
 
-Your CI workflow (`.github/workflows/pythonapp.yml`) performs:
+ CI workflow (`.github/workflows/pythonapp.yml`) performs:
 
 * Checkout code  
 * Set up Python  
 * Install dependencies  
 * Run lint  
 * Run tests
+
+This project does **not** use a Service Principal and does **not** deploy from GitHub Actions.
 
 ## **7\. Testing the Azure Prediction Endpoint**
 
@@ -152,22 +160,36 @@ https://<app-name>.scm.azurewebsites.net/api/logs/docker
 az webapp log tail -g Azuredevops -n udacity-webapp-shivali
 ```
 
-## **10\. Expected Results**
+## **9\. Expected Results**
 
-### **✔ CI pipeline passes**
+###  **CI pipeline passes**
 
 * Linting  
 * Testing
 
-### **✔ Azure App Service running**
+###  **Azure App Service running**
 
 * App loads at root URL
 
-### **✔ Prediction endpoint works**
+###  **Prediction endpoint works**
 
 * Script returns JSON prediction
 
-## **11\. Demo Video URL** 
+## **10\. Demo Video URL**
 
-* https://youtu.be/PYBK-zCTduc
+[https://youtu.be/PYBK-zCTduc](https://youtu.be/PYBK-zCTduc)
+
+## **11\. Project Plan Spreadsheet**
+
+This project includes a detailed project planning spreadsheet required by the Udacity rubric.  
+ The spreadsheet contains:
+
+* Quarterly and yearly plan  
+* Week-by-week deliverables  
+* Task difficulty and time estimates  
+* Original plan vs. final plan
+
+The spreadsheet is included in the repository:
+
+**Project-Plan.xlsx**
 
