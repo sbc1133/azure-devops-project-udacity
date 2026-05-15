@@ -1,3 +1,4 @@
+# force refresh
 name: Deploy Python app to Azure Web App
 
 on:
