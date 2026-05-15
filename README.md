@@ -1,51 +1,173 @@
-# Overview
+## **1\. Project Overview**
 
-<TODO: complete this with an overview of your project>
+This project demonstrates how to operationalize a Machine Learning–powered Flask web application using:
 
-## Project Plan
-<TODO: Project Plan
+* **GitHub Actions** for Continuous Integration (CI)  
+* **Azure App Service** for cloud hosting  
+* **Azure CLI** for manual deployment  
+* **Shell scripts** for testing the prediction endpoint  
+* **Docker/Kubernetes (optional)** for containerization
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+The application exposes a `/predict` endpoint that returns housing price predictions using a pretrained ML model.
 
-## Instructions
+## **2\. Repository Structure**
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
+```
+.
+├── app.py                     # Flask application
+├── requirements.txt           # Python dependencies
+├── Makefile                   # Install, lint, test automation
+├── make_predict_azure_app.sh  # Sends POST request to Azure app
+├── make_prediction.sh         # Local prediction script
+├── test_hello.py              # Sample CI test
+├── hello.py                   # Sample Python module
+├── Dockerfile                 # Optional containerization
+├── Housing_price_model/       # ML model artifacts
+└── .github/workflows/         # GitHub Actions CI pipeline
 ```
 
-* Output of streamed log files from deployed application
+## **3\. Getting Started**
 
-> 
+### **3.1 Create and Activate Virtual Environment**
 
-## Enhancements
+```
+python3 -m venv ~/.myrepo
+source ~/.myrepo/bin/activate
+```
 
-<TODO: A short description of how to improve the project in the future>
+### **3.2 Install Dependencies**
 
-## Demo 
+```
+make install
+```
 
-<TODO: Add link Screencast on YouTube>
+### **3.3 Run Lint \+ Tests**
 
+```
+make lint
+make test
+```
+
+Or run everything:
+
+```
+make all
+```
+
+## **4\. Running the Application Locally**
+
+Start the Flask app:
+
+```
+python app.py
+```
+
+The app runs at:
+
+```
+http://127.0.0.1:5000
+```
+
+Test prediction locally:
+
+```
+./make_prediction.sh
+```
+
+## **5\. Deploying to Azure App Service (Manual Deployment)**
+
+### **5.1 Login to Azure**
+
+```
+az login
+```
+
+### **5.2 Deploy using Azure CLI**
+
+Deployment was performed manually using:
+
+```
+az webapp up -n udacity-webapp-shivali -g Azuredevops
+```
+
+This command:
+
+* Creates the App Service (if needed)  
+* Deploys the Flask app  
+* Configures logging  
+* Outputs the live URL
+
+Your deployed app:
+
+```
+https://udacity-webapp-shivali.azurewebsites.net
+```
+
+## **6\. GitHub Actions CI Pipeline**
+
+Your CI workflow (`.github/workflows/pythonapp.yml`) performs:
+
+* Checkout code  
+* Set up Python  
+* Install dependencies  
+* Run lint  
+* Run tests
+
+## **7\. Testing the Azure Prediction Endpoint**
+
+The `/predict` endpoint accepts **POST only**.
+
+To test:
+
+```
+./make_predict_azure_app.sh
+```
+
+Example output:
+
+```
+Port: 443
+{"prediction":[20.3537]}
+```
+
+If you open `/predict` in a browser, you will see:
+
+```
+405 Method Not Allowed
+```
+
+This is expected because browsers send GET requests.
+
+## **8\. Logs & Monitoring**
+
+### **View logs in browser**
+
+```
+https://<app-name>.scm.azurewebsites.net/api/logs/docker
+```
+
+### **Stream logs via CLI**
+
+```
+az webapp log tail -g Azuredevops -n udacity-webapp-shivali
+```
+
+## **10\. Expected Results**
+
+### **✔ CI pipeline passes**
+
+* Linting  
+* Testing
+
+### **✔ Azure App Service running**
+
+* App loads at root URL
+
+### **✔ Prediction endpoint works**
+
+* Script returns JSON prediction
+
+## **11\. Demo Video URL** 
+
+* https://youtu.be/PYBK-zCTduc
 
