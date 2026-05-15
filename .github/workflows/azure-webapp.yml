@@ -12,10 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.10
 
     - name: Install dependencies
       run: |
@@ -26,6 +26,9 @@ jobs:
       run: |
         pytest -vv --disable-warnings --maxfail=1
 
+    - name: Zip artifact for deployment
+      run: zip -r release.zip .
+
     - name: Login to Azure
       uses: azure/login@v1
       with:
@@ -35,4 +38,4 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: udacity-webapp-6569
-        package: .
+        package: release.zip
