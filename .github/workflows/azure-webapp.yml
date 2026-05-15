@@ -1,19 +1,21 @@
-name: Deploy Python app to Azure Web App
+name: Python application
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     - name: Set up Python 3.10
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: "3.10"
 
@@ -24,19 +26,11 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -vv --disable-warnings --maxfail=1
-
-    - name: Zip artifact for deployment
-      run: |
-        zip -r release.zip app.py requirements.txt
-
-    - name: Login to Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        make all
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: udacity-webapp-6569
-        package: release.zip
+        app-name: "<YOUR_APP_NAME>"
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+        package: .
