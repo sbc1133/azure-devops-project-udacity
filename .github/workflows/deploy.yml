@@ -1,9 +1,9 @@
-name: CI-CD Pipeline
+name: Deploy to Azure WebApp
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
@@ -11,25 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+      - name: Azure Login
+        uses: azure/login@v1
         with:
-          python-version: "3.10"
+          enable-AzPSSession: false
+          allow-no-subscriptions: true
 
-      - name: Install dependencies
-        run: make install
-
-      - name: Lint
-        run: make lint
-
-      - name: Test
-        run: make test
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: udacity-webapp-shivali
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
+      - name: Deploy using Azure CLI
+        run: |
+          az webapp deploy \
+            --resource-group Azuredevops \
+            --name udacity-webapp-shivali \
+            --src-path . \
+            --type zip
