@@ -13,13 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Azure Login
+      - name: Azure Login (OIDC)
         uses: azure/login@v1
         with:
-          enable-AzPSSession: false
           allow-no-subscriptions: true
 
-      - name: Deploy using Azure CLI
+      - name: Deploy using Azure CLI (ZIP Deploy)
         run: |
           az webapp deploy \
             --resource-group Azuredevops \
