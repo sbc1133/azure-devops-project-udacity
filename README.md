@@ -88,25 +88,37 @@ Test prediction locally:
 az login
 ```
 
+### **5.3 Create a Clean Deployment ZIP**
+
+```
+zip -r app.zip . -x "*.git*" "*.ipynb" "Project-Plan.xlsx"
+```
+
 ### **5.2 Deploy using Azure CLI**
 
 Deployment was performed manually using:
 
 ```
-az webapp up -n udacity-webapp-shivali -g Azuredevops
+az webapp deploy \
+  --resource-group Azuredevops \
+  --name udacity-webapp-shivali-2026 \
+  --src-path app.zip \
+  --type zip
+
+az webapp config set \
+  --resource-group Azuredevops \
+  --name udacity-webapp-shivali-2026 \
+  --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
+
+az webapp restart \
+  --resource-group Azuredevops \
+  --name udacity-webapp-shivali-2026
 ```
-
-This command:
-
-* Creates the App Service (if needed)  
-* Deploys the Flask app  
-* Configures logging  
-* Outputs the live URL
 
 deployed app:
 
 ```
-https://udacity-webapp-shivali.azurewebsites.net
+https://udacity-webapp-shivali-2026.azurewebsites.net
 ```
 
 ## **6\. GitHub Actions CI Pipeline**
@@ -118,8 +130,6 @@ https://udacity-webapp-shivali.azurewebsites.net
 * Install dependencies  
 * Run lint  
 * Run tests
-
-This project does **not** use a Service Principal and does **not** deploy from GitHub Actions.
 
 ## **7\. Testing the Azure Prediction Endpoint**
 
@@ -135,7 +145,8 @@ Example output:
 
 ```
 Port: 443
-{"prediction":[20.3537]}
+{"prediction":[2.431574790057212]}
+
 ```
 
 If you open `/predict` in a browser, you will see:
@@ -151,13 +162,15 @@ This is expected because browsers send GET requests.
 ### **View logs in browser**
 
 ```
-https://<app-name>.scm.azurewebsites.net/api/logs/docker
+https://udacity-webapp-shivali-2026.scm.azurewebsites.net/api/logs/docker
 ```
 
 ### **Stream logs via CLI**
 
 ```
-az webapp log tail -g Azuredevops -n udacity-webapp-shivali
+az webapp log tail \
+  --resource-group Azuredevops \
+  --name udacity-webapp-shivali-2026
 ```
 
 ## **9\. Expected Results**
@@ -177,7 +190,7 @@ az webapp log tail -g Azuredevops -n udacity-webapp-shivali
 
 ## **10\. Demo Video URL**
 
-[https://youtu.be/PYBK-zCTduc](https://youtu.be/PYBK-zCTduc)
+[https://youtu.be/K0XYpamRyBw](https://youtu.be/K0XYpamRyBw)
 
 ## **11\. Project Plan Spreadsheet**
 
