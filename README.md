@@ -206,3 +206,27 @@ The spreadsheet is included in the repository:
 
 **Project-Plan.xlsx**
 
+## **12\. Screenshots**
+
+**\#\# Screenshots**
+
+**\#\#\# 1\. Project cloned in Azure Cloud Shell**
+
+**\!\[Cloud Shell\](screenshots/cloudshell.png)**
+
+**\#\#\# 2\. make all passing**
+
+**\!\[Make All\](screenshots/makeall.png)**
+
+**\#\#\# 3\. GitHub Actions CI passing**
+
+**\!\[CI Pipeline\](screenshots/ci.png)**
+
+**\#\#\# 4\. Azure App Service running**
+
+**\!\[App Service\](screenshots/appservice.png)**
+
+**\#\#\# 5\. Successful prediction**
+
+**\!\[Prediction\](screenshots/prediction.png)**
+
