@@ -190,7 +190,7 @@ az webapp log tail \
 
 ## **10\. Demo Video URL**
 
-[https://youtu.be/K0XYpamRyBw](https://youtu.be/K0XYpamRyBw)
+[https://youtu.be/qq8mz3XWSyM](https://youtu.be/qq8mz3XWSyM)
 
 ## **11\. Project Plan Spreadsheet**
 
