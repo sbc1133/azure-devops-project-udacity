@@ -208,18 +208,16 @@ The spreadsheet is included in the repository:
 ## 12. Screenshots
 
 ### 1. Project cloned in Azure Cloud Shell
-![Cloud Shell](Screenshots/cloudshell.png)
+![Cloud Shell](Screenshots/Project%20Cloned%20Cloud%20Shell.png)
 
 ### 2. make all passing
-![Make All](Screenshots/makeall.png)
+![Make All](Screenshots/Make%20all.png)
 
 ### 3. GitHub Actions CI passing
-![CI Pipeline](Screenshots/ci.png)
+![CI Pipeline](Screenshots/GitHubActionBadge.png)
 
 ### 4. Azure App Service running
-![App Service](Screenshots/appservice.png)
+![App Service](Screenshots/Deployed%20URL.png)
 
-### 5. Successful prediction
-![Prediction](Screenshots/prediction.png)
 
 
