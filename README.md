@@ -189,8 +189,7 @@ az webapp log tail \
 * Script returns JSON prediction
 
 ## **10\. Demo Video URL**
-
-[https://youtu.be/qq8mz3XWSyM](https://youtu.be/qq8mz3XWSyM)
+[https://youtu.be/3MaE6gymfBA](https://youtu.be/3MaE6gymfBA)
 
 ## **11\. Project Plan Spreadsheet**
 
@@ -206,27 +205,20 @@ The spreadsheet is included in the repository:
 
 **Project-Plan.xlsx**
 
-## **12\. Screenshots**
+## 12. Screenshots
 
-**\#\# Screenshots**
+### 1. Project cloned in Azure Cloud Shell
+![Cloud Shell](screenshots/cloudshell.png)
 
-**\#\#\# 1\. Project cloned in Azure Cloud Shell**
+### 2. make all passing
+![Make All](screenshots/makeall.png)
 
-**\!\[Cloud Shell\](screenshots/cloudshell.png)**
+### 3. GitHub Actions CI passing
+![CI Pipeline](screenshots/ci.png)
 
-**\#\#\# 2\. make all passing**
+### 4. Azure App Service running
+![App Service](screenshots/appservice.png)
 
-**\!\[Make All\](screenshots/makeall.png)**
-
-**\#\#\# 3\. GitHub Actions CI passing**
-
-**\!\[CI Pipeline\](screenshots/ci.png)**
-
-**\#\#\# 4\. Azure App Service running**
-
-**\!\[App Service\](screenshots/appservice.png)**
-
-**\#\#\# 5\. Successful prediction**
-
-**\!\[Prediction\](screenshots/prediction.png)**
+### 5. Successful prediction
+![Prediction](screenshots/prediction.png)
 
