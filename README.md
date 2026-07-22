@@ -203,11 +203,9 @@ This project includes a detailed project planning spreadsheet required by the Ud
 * Quarterly and yearly plan  
 * Week-by-week deliverables  
 * Task difficulty and time estimates  
-* Original plan vs. final plan
+The full yearly and quarterly project plan, including weekly deliverables and task difficulty estimates, is available here:
 
-The spreadsheet is included in the repository:
-
-**Project-Plan.xlsx**
+[Project Plan.xlsx](Project%20Plan.xlsx)
 
 ## 12. Screenshots
 
