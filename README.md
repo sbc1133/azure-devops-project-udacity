@@ -30,6 +30,25 @@ The application exposes a `/predict` endpoint that returns housing price predict
 
 ---
 
+## Architectural Diagram
+
+Below is a simplified architecture diagram showing how the CI/CD pipeline and application deployment flow works:
+
+Developer
+    ↓
+GitHub Repository
+    ↓
+GitHub Actions (CI/CD Pipeline)
+    - Install dependencies
+    - Lint and test code
+    - Build and deploy application
+    ↓
+Azure App Service (Web App)
+    ↓
+Flask Application
+    ↓
+Prediction Endpoint (/predict)
+
 ## **3\. Getting Started**
 
 ### **3.1 Create and Activate Virtual Environment**
@@ -220,6 +239,27 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 
 ### 4. Azure App Service running
 ![App Service](screenshots/Deployed%20URL.png)
+
+## Future Improvements
+
+There are several enhancements that could make this project more robust, scalable, and production‑ready:
+
+1. **Add Automated Unit Tests**
+   Expand the test suite to include unit tests, integration tests, and coverage reporting to improve reliability.
+
+2. **Implement Infrastructure as Code (IaC)**
+   Use Terraform or Bicep to provision Azure resources consistently across environments.
+
+3. **Containerize the Application**
+   Package the Flask app into a Docker container and deploy via Azure Web App for Containers or Azure Kubernetes Service.
+
+4. **Add Monitoring and Logging**
+   Integrate Azure Monitor, Application Insights, and structured logging for better observability.
+
+5. **Add Security Scanning**
+   Include dependency scanning, secret scanning, and CI/CD security checks to improve pipeline safety.
+
+
 
 
 
