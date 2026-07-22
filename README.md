@@ -215,7 +215,7 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ### 2. make all passing
 ![Make All](screenshots/Make%20all.png)
 
-### 3. GitHub Actions CI passing
+### 3. GitHub Actions Badge
 ![CI Pipeline](screenshots/GitHubActionBadge.png)
 
 ### 4. Azure App Service running
