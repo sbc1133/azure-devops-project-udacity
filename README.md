@@ -233,7 +233,7 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ### 2. make all passing
 ![Make All](screenshots/Make%20all.png)
 
-### 3. GitHub Actions Showing succesful run
+### 3. GitHub showing succesful run of the project in Azure Pipelines
 ![CI Pipeline](screenshots/GitHubActionBadge.png)
 
 ### 4. Azure App Service running
