@@ -32,15 +32,18 @@ The application exposes a `/predict` endpoint that returns housing price predict
 
 ## Architectural Diagram
 
-The following diagram shows the CI/CD workflow for this project. Source code is stored in GitHub, validated with GitHub Actions, deployed through Azure Pipelines, and hosted on Azure App Service. Users can then access the deployed prediction endpoint and receive a JSON response.
+The following diagram shows the CI/CD workflow for this project. 
+Source code is stored in GitHub, validated with GitHub Actions, 
+and deployed manually using Azure CLI to Azure App Service.
+
 
 ```mermaid
 flowchart LR
     A[Developer] --> B[GitHub Repo]
     B --> C[GitHub Actions - Lint and Test]
-    B --> D[Azure Pipelines - Deploy]
+    C --> D[Deployment via Azure CLI]
     D --> E[Azure App Service]
-    F[Azure Cloud Shell or User] --> E
+    F[User or Cloud Shell] --> E
     E --> G[Prediction JSON Response]
 ```
 
