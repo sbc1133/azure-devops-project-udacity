@@ -32,22 +32,18 @@ The application exposes a `/predict` endpoint that returns housing price predict
 
 ## Architectural Diagram
 
-Below is a simplified architecture diagram showing how the CI/CD pipeline and application deployment flow works:
+The following diagram shows the CI/CD workflow for this project. Source code is stored in GitHub, validated with GitHub Actions, deployed through Azure Pipelines, and hosted on Azure App Service. Users can then access the deployed prediction endpoint and receive a JSON response.
 
-Developer
-    ↓
-GitHub Repository
-    ↓
-GitHub Actions (CI/CD Pipeline)
-    - Install dependencies
-    - Lint and test code
-    - Build and deploy application
-    ↓
-Azure App Service (Web App)
-    ↓
-Flask Application
-    ↓
-Prediction Endpoint (/predict)
+```mermaid
+flowchart LR
+    A[Developer] --> B[GitHub Repo]
+    B --> C[GitHub Actions - Lint and Test]
+    B --> D[Azure Pipelines - Deploy]
+    D --> E[Azure App Service]
+    F[Azure Cloud Shell or User] --> E
+    E --> G[Prediction JSON Response]
+```
+
 
 ## **3\. Getting Started**
 
