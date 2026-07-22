@@ -203,6 +203,9 @@ az webapp log tail \
 
 * Script returns JSON prediction
 
+## Github Action Badge
+[![Python CI](https://github.com/sbc1133/azure-devops-project-udacity/actions/workflows/ci.yml/badge.svg)](https://github.com/sbc1133/azure-devops-project-udacity/actions/workflows/ci.yml)
+
 ## **10\. Demo Video URL**
 [https://youtu.be/3MaE6gymfBA](https://youtu.be/3MaE6gymfBA)
 
@@ -230,7 +233,7 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ### 2. make all passing
 ![Make All](screenshots/Make%20all.png)
 
-### 3. GitHub Actions Badge
+### 3. GitHub Actions Showing succesful run
 ![CI Pipeline](screenshots/GitHubActionBadge.png)
 
 ### 4. Azure App Service running
