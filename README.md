@@ -191,6 +191,10 @@ az webapp log tail \
 ## **10\. Demo Video URL**
 [https://youtu.be/3MaE6gymfBA](https://youtu.be/3MaE6gymfBA)
 
+## Trello Board
+A Trello board was created to track all major tasks and milestones for this project:
+https://trello.com/b/6a6101b0a36a2ed67c70e83b/udacity-devop-project
+
 ## **11\. Project Plan Spreadsheet**
 
 This project includes a detailed project planning spreadsheet required by the Udacity rubric.  
