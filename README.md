@@ -231,16 +231,22 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ## 12. Screenshots
 
 ### 1. Project cloned in Azure Cloud Shell
-![Cloud Shell](screenshots/Project%20Cloned%20Cloud%20Shell.png)
+![Project Cloned](screenshots/Project%20Cloned%20Cloud%20Shell.png)
 
-### 2. make all passing
+### 2. `make all` passing in Azure Cloud Shell
 ![Make All](screenshots/Make%20all.png)
 
-### 3. GitHub showing succesful run of the project in Azure Pipelines
-![CI Pipeline](screenshots/GitHubActionBadge.png)
+### 3. GitHub Actions CI badge (successful run)
+![GitHub Actions Badge](screenshots/GitHubActionBadge.png)
 
-### 4. Azure App Service running
-![App Service](screenshots/Deployed%20URL.png)
+### 4. Azure App Service running the deployed application
+![Azure App Service](screenshots/Deployed%20URL.png)
+
+### 5. Azure Pipelines successful build and deploy run
+![Azure Pipelines](screenshots/Azure%20Pipelines%20Run.png)
+
+### 6. Successful prediction executed in Azure Cloud Shell
+![Prediction](screenshots/Prediction.png)
 
 ## Future Improvements
 
