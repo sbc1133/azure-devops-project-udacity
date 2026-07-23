@@ -33,18 +33,26 @@ The application exposes a `/predict` endpoint that returns housing price predict
 ## Architectural Diagram
 
 The following diagram shows the CI/CD workflow for this project. 
-Source code is stored in GitHub, validated with GitHub Actions, 
-and deployed manually using Azure CLI to Azure App Service.
+Source code is stored in GitHub, validated with GitHub Actions and Deployed Azure Pipelines.
 
 
 ```mermaid
 flowchart LR
     A[Developer] --> B[GitHub Repo]
-    B --> C[GitHub Actions - Lint and Test]
-    C --> D[Deployment via Azure CLI]
-    D --> E[Azure App Service]
-    F[User or Cloud Shell] --> E
-    E --> G[Prediction JSON Response]
+
+    %% CI
+    B --> C[GitHub Actions<br/>Lint + Test]
+
+    %% CD
+    C --> D[Azure DevOps Pipeline<br/>]
+
+    %% Runtime
+    D[Azure App Service<br/>Running Flask App]
+
+    %% Testing
+    E[Azure Cloud Shell<br/>make all + prediction] --> E
+    F --> G[Prediction JSON Response]
+
 ```
 
 
