@@ -25,4 +25,4 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST https://udacity-webapp-shivali-July2026.azurewebsites.net/predict
+     -X POST https://udacity-webapp-shivali-2026.azurewebsites.net/predict
