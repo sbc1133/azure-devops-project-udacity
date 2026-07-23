@@ -243,7 +243,7 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ![Azure App Service](screenshots/Azure%20App%20Service.png)
 
 ### 5. Azure Pipelines successful build and deploy run
-![Azure Pipelines](screenshots/Azure%20Pipeline%20RSuccesful%20Run.png)
+![Azure Pipelines](screenshots/Azure%20Pipeline%20Succesful%20Run.png)
 
 ### 6. Successful prediction executed in Azure Cloud Shell
 ![Prediction](screenshots/Predict.png)
