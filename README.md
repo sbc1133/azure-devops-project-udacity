@@ -240,7 +240,7 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ![GitHub Actions Badge](screenshots/CI%20Workflow%20Build%20pass.png)
 
 ### 4. Azure App Service running the deployed application
-![Azure App Service](screenshots/Azure%20App%Service.png)
+![Azure App Service](screenshots/Azure%20App%20Service.png)
 
 ### 5. Azure Pipelines successful build and deploy run
 ![Azure Pipelines](screenshots/Azure%20Pipeline%20RSuccesful%20Run.png)
