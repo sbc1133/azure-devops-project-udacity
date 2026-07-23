@@ -236,14 +236,14 @@ The full yearly and quarterly project plan, including weekly deliverables and ta
 ### 2. `make all` passing in Azure Cloud Shell
 ![Make All](screenshots/Make%20All.png)
 
-### 3. GitHub Actions CI badge (successful run)
-![GitHub Actions Badge](screenshots/GitHubActionBadge.png)
+### 3. GitHub CI Successs
+![GitHub Actions Badge](screenshots/CI%20Workflow%20Build%20pass.png)
 
 ### 4. Azure App Service running the deployed application
 ![Azure App Service](screenshots/Azure%20App%Service.png)
 
 ### 5. Azure Pipelines successful build and deploy run
-![Azure Pipelines](screenshots/Azure%20Pipeline%20RSuccesful%20run.png)
+![Azure Pipelines](screenshots/Azure%20Pipeline%20RSuccesful%20Run.png)
 
 ### 6. Successful prediction executed in Azure Cloud Shell
 ![Prediction](screenshots/Predict.png)
