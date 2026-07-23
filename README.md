@@ -37,9 +37,6 @@ Source code is stored in GitHub, validated with GitHub Actions and Deployed Azur
 
 
 ```mermaid
-## Architectural Diagram (Updated CI/CD Flow)
-
-```mermaid
 flowchart LR
     A[Developer] --> B[GitHub Repo]
 
@@ -48,15 +45,14 @@ flowchart LR
 
     %% CD
     C --> D[Azure DevOps Pipeline<br/>]
+    D --> E[Azure DevOps Pipeline<br/>Deploy to Azure App Service]
 
     %% Runtime
-    D --> E[Azure App Service<br/>Running Flask App]
+    E[Azure App Service<br/>Running Flask App]
 
     %% Testing
     F[Azure Cloud Shell<br/>make all + prediction] --> E
     E --> G[Prediction JSON Response]
-
-
 ```
 
 
