@@ -127,24 +127,24 @@ Deployment was performed manually using:
 ```
 az webapp deploy \
   --resource-group Azuredevops \
-  --name udacity-webapp-shivali-2026 \
+  --name udacity-webapp-shivali-July2026 \
   --src-path app.zip \
   --type zip
 
 az webapp config set \
   --resource-group Azuredevops \
-  --name udacity-webapp-shivali-2026 \
+  --name udacity-webapp-shivali-July2026 \
   --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
 
 az webapp restart \
   --resource-group Azuredevops \
-  --name udacity-webapp-shivali-2026
+  --name udacity-webapp-shivali-July2026
 ```
 
 deployed app:
 
 ```
-https://udacity-webapp-shivali-2026.azurewebsites.net
+https://udacity-webapp-shivali-July2026.azurewebsites.net
 ```
 
 ## **6\. GitHub Actions CI Pipeline**
@@ -188,7 +188,7 @@ This is expected because browsers send GET requests.
 ### **View logs in browser**
 
 ```
-https://udacity-webapp-shivali-2026.scm.azurewebsites.net/api/logs/docker
+https://udacity-webapp-shivali-July2026.scm.azurewebsites.net/api/logs/docker
 ```
 
 ### **Stream logs via CLI**
@@ -196,7 +196,7 @@ https://udacity-webapp-shivali-2026.scm.azurewebsites.net/api/logs/docker
 ```
 az webapp log tail \
   --resource-group Azuredevops \
-  --name udacity-webapp-shivali-2026
+  --name udacity-webapp-shivali-July2026
 ```
 
 ## **9\. Expected Results**
