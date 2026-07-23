@@ -6,7 +6,7 @@ This project demonstrates how to operationalize a Machine Learning–powered Fla
 
 * **GitHub Actions** for Continuous Integration (CI)  
 * **Azure App Service** for cloud hosting  
-* **Azure CLI** for manual deployment  
+* **Azure CLI** and **Azure Pipelines** for deployment  
 * **Shell scripts** for testing the prediction endpoint
 
 The application exposes a `/predict` endpoint that returns housing price predictions using a pretrained ML model.
