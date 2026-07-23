@@ -50,7 +50,7 @@ flowchart LR
     D[Azure App Service<br/>Running Flask App]
 
     %% Testing
-    E[Azure Cloud Shell<br/>make all + prediction] --> E
+    E[Azure Cloud Shell<br/>make all + prediction] --> F
     F --> G[Prediction JSON Response]
 
 ```
